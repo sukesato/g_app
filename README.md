@@ -20,9 +20,6 @@ Ruby 2.4.0 Rails 5.1.6
 - ログイン機能
 - ユーザー登録機能
     - メールアドレス、名前、パスワードは必須
-- リスト1
-    - リスト1-1
-    - リスト1-2
 - パスワード再設定機能
 - ブログ一覧表示機能
     - コメント数を表示
@@ -43,16 +40,16 @@ Ruby 2.4.0 Rails 5.1.6
     - コメント機能とタスク管理機能についてはページ遷移なしで実行できる
 
 ## カタログ設計
-https://docs.google.com/spreadsheets/d/1509-2Kp_e7FihrLHP99TokWjNUVz8i8C7SEiR5jaH5I/edit#gid=1304952335
+https://docs.google.com/spreadsheets/d/1509-2Kp_e7FihrLHP99TokWjNUVz8i8C7SEiR5jaH5I/edit?usp=sharing
 
 ## テーブル定義
-https://docs.google.com/spreadsheets/d/1Rmt08vOyTc2q2P4Ma_bvEqNTucXWAOUmy4hr8hIkTbw/edit#gid=678848621
+https://docs.google.com/spreadsheets/d/1Rmt08vOyTc2q2P4Ma_bvEqNTucXWAOUmy4hr8hIkTbw/edit?usp=sharing
 
 ## 画面遷移図
-https://docs.google.com/spreadsheets/d/1aFPAvI_eUDu_XiMEixJKqxJO-3LxXibVDKgsLcVDXsk/edit#gid=0
+https://docs.google.com/spreadsheets/d/1aFPAvI_eUDu_XiMEixJKqxJO-3LxXibVDKgsLcVDXsk/edit?usp=sharing
 
 ## 画面ワイヤーフレーム
-https://docs.google.com/spreadsheets/d/1ZIEcSqfw20Foohazqib-bjjKMy9Dpu37wsSy3YpWh0I/edit#gid=0
+https://docs.google.com/spreadsheets/d/1ZIEcSqfw20Foohazqib-bjjKMy9Dpu37wsSy3YpWh0I/edit?usp=sharing
 
 ## 使用予定gem
 Device  
