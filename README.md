@@ -54,6 +54,6 @@ https://docs.google.com/spreadsheets/d/1aFPAvI_eUDu_XiMEixJKqxJO-3LxXibVDKgsLcVD
 https://docs.google.com/spreadsheets/d/1ZIEcSqfw20Foohazqib-bjjKMy9Dpu37wsSy3YpWh0I/edit?usp=sharing
 
 ## 使用予定gem
-Device  
+device  
 Ajax  
 kaminari  
