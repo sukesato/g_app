@@ -1,0 +1,77 @@
+このコードはPHASE３のものを卒業課題用に変えたもの。
+実装したが、理解不十分のためこちらに移す。
+
+class BlogsController < ApplicationController
+  def index
+    @blogs = Blog.all #ビューにテーブルから取得した全てのブログデータデータを渡す（インスタンス変数を定義）
+  end
+  
+  def new
+    if params[:back]
+      @blog = Blog.new(blog_params)
+    else
+      @blog = Blog.new
+    end
+  end
+  
+  def create
+    @blog = Blog.new(Blog_params)
+    @blog.user_id = current_user.id #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
+    if @blog.save
+      BlogMailer.blog_mail(@blog).deliver
+      # 一覧画面へ遷移して"ブログを投稿しました！"とメッセージを表示します。
+      redirect_to blogs_path, notice: "ブログを投稿しました！"
+    else
+      # 入力フォームを再描画します。
+      render 'new'
+    end
+  end
+  
+  def show
+    @priority = current_user.priorities.find_by(blog_id: @blog.id)
+  end
+  
+  def edit
+  end
+  
+  def update
+    if @blog.update(blog_params)
+      redirect_to blogs_path, notice: "インスタを編集しました！"
+    else
+      render 'edit'
+    end
+  end
+  
+  def destroy
+    @blog.destroy
+    redirect_to blogs_path, notice:"投稿を削除しました！"
+  end
+  
+  def confirm
+    @blog = blog.new(blog_params)
+    @blog.user_id = current_user.id #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
+    render :new if @blog.invalid?
+  end
+  
+  private
+  
+  def blog_params
+    params.require(:blog).permit(:title, :content, :priority) #StrongParameterを使用
+  end
+  
+  def set_blog
+    @blog = Blog.find(params[:id])
+  end
+  
+  def user_exist?
+    unless logged_in?
+      redirect_to new_session_path
+    end
+  end
+  
+  def user_equal?
+     unless @blog.user_id == current_user.id
+       redirect_to blog_path
+     end
+  end
+end
