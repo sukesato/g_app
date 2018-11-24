@@ -6,9 +6,10 @@ class BlogsController < ApplicationController
   
   def index
     #ビューにテーブルから取得した全てのブログデータを渡す（インスタンス変数を定義）
-    @blogs = Blog.all
+    # @blogs = Blog.all kaminari使用前
+    @blogs = Blog.all.page(params[:page]).per(2)
   end
-  
+
   def new
     if params[:back]
       @blog = Blog.new(blog_params)
