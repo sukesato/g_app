@@ -30,7 +30,8 @@ class BlogsController < ApplicationController
   end
   
   def show
-    
+    @comments = @blog.comments
+    @comment = @blog.comments.build
   end
   
   def edit
@@ -65,6 +66,5 @@ class BlogsController < ApplicationController
   def set_blog
     @blog = Blog.find(params[:id])
   end
-  
   
 end

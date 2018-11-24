@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :users
   resources :blogs do
+    resources :comments
   
     collection do
         post :confirm

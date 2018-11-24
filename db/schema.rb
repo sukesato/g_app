@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181123112227) do
+ActiveRecord::Schema.define(version: 20181124040655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20181123112227) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.integer "blog_id"
+    t.bigint "blog_id"
+    t.index ["blog_id"], name: "index_comments_on_blog_id"
   end
 
   create_table "labels", force: :cascade do |t|
@@ -58,4 +59,5 @@ ActiveRecord::Schema.define(version: 20181123112227) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "blogs"
 end
