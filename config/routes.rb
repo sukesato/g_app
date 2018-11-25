@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'blogs#index'
   resources :priorities
-  resources :labels
+  resources :labels, only: [:create, :destroy]
   resources :comments
   resources :users
   resources :blogs do

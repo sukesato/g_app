@@ -16,6 +16,8 @@
     <td><%= blog.content %></td>
     <td><%= blog.priority %></td>
     
+    
+    
     <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
     
     <td><%= link_to "ブログを編集する", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %></td>
@@ -30,4 +32,6 @@
 <%= paginate @blogs %>
 
 <%= link_to '新規投稿を行う', new_blog_path, class: "btn btn-info" %>
+
+
 

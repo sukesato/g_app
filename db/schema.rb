@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181124121954) do
+ActiveRecord::Schema.define(version: 20181125091550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20181124121954) do
     t.string "title"
     t.text "content"
     t.integer "user_id"
-    t.integer "priority"
+    t.integer "priority", limit: 2, default: 1, null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 20181124121954) do
   end
 
   create_table "labels", force: :cascade do |t|
-    t.integer "blog_id"
-    t.integer "priority_id"
+    t.bigint "blog_id"
+    t.bigint "priority_id"
+    t.index ["blog_id"], name: "index_labels_on_blog_id"
+    t.index ["priority_id"], name: "index_labels_on_priority_id"
   end
 
   create_table "priorities", force: :cascade do |t|
@@ -62,4 +64,6 @@ ActiveRecord::Schema.define(version: 20181124121954) do
   end
 
   add_foreign_key "comments", "blogs"
+  add_foreign_key "labels", "blogs"
+  add_foreign_key "labels", "priorities"
 end

@@ -1,8 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
-  
-  
+  before_action :authenticate_user!
   
   def index
     #ビューにテーブルから取得した全てのブログデータを渡す（インスタンス変数を定義）
@@ -20,6 +18,7 @@ class BlogsController < ApplicationController
   
   def create
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
     if @blog.save
       # 一覧画面へ遷移して"新規投稿を行いました！"とメッセージを表示します。
       redirect_to blogs_path, notice: "新規投稿を行いました！"
@@ -33,6 +32,7 @@ class BlogsController < ApplicationController
   def show
     @comments = @blog.comments
     @comment = @blog.comments.build
+    @labels = current_user.labels.find_by(blog_id: @blog.id)
   end
   
   def edit
@@ -54,7 +54,7 @@ class BlogsController < ApplicationController
   
   def confirm
     @blog = Blog.new(blog_params)
-    # @blog.user_id = current_user.id #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
+    @blog.user_id = current_user.id #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
     render :new if @blog.invalid?
   end
   
