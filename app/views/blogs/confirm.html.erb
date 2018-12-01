@@ -7,7 +7,7 @@
 
   <p>タイトル:<%= @blog.title %></p>
   <p>本文:<%= @blog.content %></p>
-  <p>優先度:<%= @blog.priority %></p>
+  <p>優先度:<%= @blog.getStatusKeyFromValue %></p>
   <%= form.submit  "登録する" %>
 <% end %>
 

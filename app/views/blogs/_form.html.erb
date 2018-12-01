@@ -21,7 +21,7 @@
   </div>
   <div class="blog_title">
     <%= form.label :priority %>
-    <%= form.select :priority, Blog.statuses.keys.to_a, {} , class: 'form-control'%>
+    <%= form.select :priority, Blog.statuses.map { |key, value| [key, value]}, {} , class: 'form-control'%>
   </div>
   <%= form.submit %>
 <% end %>

@@ -3,31 +3,28 @@
 
 <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-    <th>優先度</th>
-  </tr>
+
+
+    <p>タイトル</p>
+    <p>内容</p>
+    <p>優先度</p>
 
 <% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.title %></td>
-    <td><%= blog.content %></td>
-    <td><%= blog.priority %></td>
+  <div class = border>
+    <p><%= blog.title %></p>
+    <p><%= blog.content %></p>
+    <p><%= blog.getStatusKeyFromValue %></p>
     
     
     
-    <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
+    <p><%= link_to '詳細を確認する', blog_path(blog.id) %></p>
     
-    <td><%= link_to "ブログを編集する", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %></td>
+    <p><%= link_to "ブログを編集する", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %></p>
     
-    <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+    <p><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></p>
     
-    
-  </tr>
+  </div>
 <% end %>
-</table>
 
 <%= paginate @blogs %>
 

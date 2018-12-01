@@ -1,11 +1,11 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create]
   
   def index
     #ビューにテーブルから取得した全てのブログデータを渡す（インスタンス変数を定義）
     # @blogs = Blog.all kaminari使用前
-    @blogs = Blog.all.page(params[:page]).per(2)
+    @blogs = Blog.all.page(params[:page]).per(3)
   end
 
   def new
@@ -32,7 +32,6 @@ class BlogsController < ApplicationController
   def show
     @comments = @blog.comments
     @comment = @blog.comments.build
-    @labels = current_user.labels.find_by(blog_id: @blog.id)
   end
   
   def edit

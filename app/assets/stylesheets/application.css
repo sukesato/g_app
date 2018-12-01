@@ -14,3 +14,44 @@
  *= require_tree .
  *= require_self
  */
+
+.top{
+     float:left;
+     width: 100px;
+     color:white;
+ }
+ 
+ .header_m{
+     float:right;
+     width: 100px;
+ }
+
+.top li a{
+     line-height:50px;
+     color:white;
+     font-size:15px;
+ }
+ 
+ .header_m li a{
+     color:white;
+     line-height:50px;
+     font-size:15px;
+ }
+ 
+ footer{
+     left: 0px;
+     bottom: 0;
+  height: 5em;
+  position: absolute;
+ }
+ 
+ body{
+     margin:0px;
+     margin-bottom: 5em;
+ }
+ 
+ html {
+  min-height: 100%;
+  position: relative;
+}
+ 

@@ -11,21 +11,34 @@
   </head>
 
   <body>
-    
-    <header class="header">Bootstrap</header>
-    <ul>
-      <li><a href="#">Bootstrapテキストページ</a></li>
-      <li><a href="#">トップページ</a></li>
-    </ul>
+    <header>
+      <div class = "top">
+        <li><%= link_to 'TOP', root_path %></li>
+      </div>
+      
+        <% if user_signed_in? %>
+        <div class="header_m">
+          <li><%= link_to "ユーザー編集", edit_user_registration_path %></li>
+        </div>
+        <div class="header_m">
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        </div>
+        <div class="header_m">
+          <li><%= link_to "新規投稿", new_blog_path %></li>
+        </div>
+        <% else %>
+        <div class="header_m">
+          <li><%= link_to 'ログイン', new_user_session_path %></li>
+        </div>
+        <div class="header_m">
+          <li><%= link_to '新規登録', new_user_registration_path %></li>
+        </div>
+        <% end %>
+      </div>
+    </header>
     
     <body>
-    <% if user_signed_in? %>
-      <%= link_to "ブログ投稿", blogs_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
+    
     
     <% if notice %>
     <p class="alert alert-notice"><%= notice %></p>
@@ -37,8 +50,8 @@
     <%= yield %>
     
     <footer>
-    <p>運営会社DIVE INTO CODE株式会社</p>
-    <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
+    <p>運営会社SSS株式会社</p>
+    <p>© 2017-2018 Copyright SSS Corp.</p>
   </footer>
   </body>
 </html>

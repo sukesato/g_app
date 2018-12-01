@@ -7,4 +7,7 @@ class Blog < ApplicationRecord
   has_many :labels_priorities, through: :labels, source: :priority
   enum status: { A: 0, B: 1, C: 2 }
   
+  def getStatusKeyFromValue
+    Blog.statuses.invert[self.priority]
+  end
 end

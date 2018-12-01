@@ -5,7 +5,7 @@
   
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.email_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
@@ -28,7 +28,10 @@
 
   <div class="field">
     <%= f.label :profile_image %>
-    <%= f.file_field :profile_image %>
+    <div class="field_image">
+      <%= f.file_field :profile_image%>
+      <%= f.hidden_field :profile_image_cache %>
+    </div>
   </div>
   
   <div class="actions">
