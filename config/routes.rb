@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     collection do
         post :confirm
     end
+    
+    member do
+      get :filter
+    end
   end
   
   if Rails.env.development?

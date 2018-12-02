@@ -7,6 +7,22 @@ class BlogsController < ApplicationController
     # @blogs = Blog.all kaminari使用前
     @blogs = Blog.all.page(params[:page]).per(3)
   end
+  
+  def filter
+     #インスタンス変数3種類に入れる。ソートの種類ごとに
+    @high_blog = Blog.where(priority: 0).page(params[:page]).per(3)
+    if params[:id] == "A"
+      @blogs = @high_blog
+    elsif params[:id] == "B"
+      @middle_blog= Blog.where(priority: 1).page(params[:page]).per(3)
+      @blogs = @middle_blog
+    elsif params[:id] == "C"
+      @low_blog = Blog.where(priority: 2).page(params[:page]).per(3)
+      @blogs = @low_blog
+    end
+    render 'index'
+  end
+  
 
   def new
     if params[:back]

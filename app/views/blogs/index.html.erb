@@ -3,14 +3,17 @@
 
 <p><%= notice %></p>
 
-
+<p><%= link_to 'ALL', blogs_path %></p>
+<p><%= link_to 'A', filter_blog_path('A') %></p>
+<p><%= link_to 'B', filter_blog_path('B') %></p>
+<p><%= link_to 'C', filter_blog_path('C') %></p>
 
     <p>タイトル</p>
     <p>内容</p>
     <p>優先度</p>
 
 <% @blogs.each do |blog| %>
-  <div class = border>
+  <div class = "border">
     <p><%= blog.title %></p>
     <p><%= blog.content %></p>
     <p><%= blog.getStatusKeyFromValue %></p>
