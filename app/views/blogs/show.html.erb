@@ -7,7 +7,7 @@
     <p><strong>優先度</strong>：<%= @blog.priority %></p>
   </div>
 
-  <p>コメント一覧（ここから下の内容が重要）</p>
+  <p>コメント一覧</p>
 
   <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
   <div id="comments_area">
@@ -17,6 +17,8 @@
 
   <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
   <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
+  
+  
 
   <%= link_to '編集', edit_blog_path(@blog) %> |
   <%= link_to '戻る', blogs_path %>
