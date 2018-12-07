@@ -5,6 +5,7 @@ class Blog < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :labels, dependent: :destroy
   has_many :labels_priorities, through: :labels, source: :priority
+  belongs_to :user
   enum status: { A: 0, B: 1, C: 2 }
   
   def getStatusKeyFromValue

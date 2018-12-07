@@ -6,6 +6,20 @@
     <p><strong>内容</strong>：<%= @blog.content %></p>
     <p><strong>優先度</strong>：<%= @blog.priority %></p>
   </div>
+  
+    <% if @blog.task_flag == true %>
+      <p><%= "完了" %><%=image_tag '500.png',:size =>'50x50' %></p>
+    <% else @blog.task_flag == false %>
+      <p ><%= "未完了" %><%=image_tag '404.png',:size =>'50x50' %></p>
+    <% end %>
+    
+    <%=form_with(model: @blog) do |form| %>
+      <label><%= form.radio_button :task_flag, true %>完了</label>
+      <label><%= form.radio_button :task_flag, false %>未完了</label>
+      <%= form.submit %>
+    <%end%>
+    
+    
 
   <p>コメント一覧</p>
 
@@ -20,6 +34,6 @@
   
   
 
-  <%= link_to '編集', edit_blog_path(@blog) %> |
+  <%= link_to '編集', edit_blog_path(@blog) %>
   <%= link_to '戻る', blogs_path %>
 </div>

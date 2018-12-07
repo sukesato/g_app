@@ -6,6 +6,7 @@ class BlogsController < ApplicationController
     #ビューにテーブルから取得した全てのブログデータを渡す（インスタンス変数を定義）
     # @blogs = Blog.all kaminari使用前
     @blogs = Blog.all.page(params[:page]).per(3)
+    
   end
   
   def filter
@@ -48,6 +49,7 @@ class BlogsController < ApplicationController
   def show
     @comments = @blog.comments
     @comment = @blog.comments.build
+    
   end
   
   def edit
@@ -76,7 +78,7 @@ class BlogsController < ApplicationController
   private
   
   def blog_params
-    params.require(:blog).permit(:title, :content, :priority) #StrongParameterを使用
+    params.require(:blog).permit(:title, :content, :priority, :task_flag) #StrongParameterを使用
   end
   
   def set_blog

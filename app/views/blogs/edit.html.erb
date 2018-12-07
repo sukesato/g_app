@@ -1,3 +1,35 @@
 <h2>投稿の編集を行う</h2>
 
-  <%= render 'form' %>
+ <%= form_with(model: @blog, local: true ,url: choose_new_or_edit) do |form| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @blog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="blog_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="blog_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="blog_title">
+    <%= form.label :priority %>
+    <%= form.select :priority, Blog.statuses.map { |key, value| [key, value]}, {} , class: 'form-control'%>
+  </div>
+  <div class="blog_title">
+      <label><%= form.radio_button :task_flag, true %>完了</label>
+      <label><%= form.radio_button :task_flag, false %>未完了</label>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "投稿一覧画面にもどる", blogs_path %>

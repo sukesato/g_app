@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :priorities
   resources :labels, only: [:create, :destroy]
-  resources :comments
   resources :users, only: [:show]
   resources :blogs do
     resources :comments
