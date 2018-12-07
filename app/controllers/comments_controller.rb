@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
     @blog = Blog.find(params[:blog_id])
     @comment = @blog.comments.build(comment_params)
+    @comment.user_id = current_user.id #現在ログインしているuserのidを、commentのuser_idカラムに挿入する
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
