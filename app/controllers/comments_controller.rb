@@ -18,8 +18,9 @@ class CommentsController < ApplicationController
   
   def destroy
     @comment = Comment.find(params[:id])
+    #binding.pry
     if @comment.destroy
-      render :index
+      redirect_to blog_path(@comment.blog), notice:"コメントを削除しました！"
     end
   end
   

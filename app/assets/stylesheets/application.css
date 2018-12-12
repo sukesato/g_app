@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require bootstrap/dist/css/bootstrap.min
+ *= require bootstrap/dist/css/bootstrap.css
  *= require_tree .
  *= require_self
  */
@@ -21,27 +21,27 @@
      color:white;
  }
  
- .header_m{
-     float:right;
-     width: 100px;
- }
+/* .header_m{*/
+/*     float:right;*/
+/*     width: 100px;*/
+/* }*/
 
-.top li a{
-     line-height:50px;
-     color:white;
-     font-size:15px;
- }
+/*.top li a{*/
+/*     line-height:50px;*/
+/*     color:white;*/
+/*     font-size:15px;*/
+/* }*/
  
- .header_m li a{
-     color:white;
-     line-height:50px;
-     font-size:15px;
- }
+/* .header_m li a{*/
+/*     color:white;*/
+/*     line-height:50px;*/
+/*     font-size:15px;*/
+/* }*/
  
  footer{
-     left: 0px;
-     bottom: 0;
-  height: 5em;
+  left: 0px;
+  bottom: 0;
+  height: 6em;
   position: absolute;
  }
  
