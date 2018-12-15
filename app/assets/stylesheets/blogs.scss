@@ -58,6 +58,17 @@ ul{
     color:blackboard;
 }
 
+.table_parent {
+    display: table;
+    width: 30%;
+}
+
+.select_button {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
 .blog_new{
     text-align:center;
 }
@@ -82,6 +93,7 @@ ul{
 .select_priority {
     display: flex;
     a{color:white;}
+    justify-content: space-between;
 }
 
 

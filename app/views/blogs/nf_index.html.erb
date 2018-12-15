@@ -5,13 +5,13 @@
 
 <div class = "select_priority">
   <div class="table_parent">
-    <p><div class = "select_button"><%= link_to 'ALL', blogs_path %></p></div>
-    <p><div class = "select_button"><%= link_to '優先度A', filter_blog_path('A') %></p></div>
-    <p><div class = "select_button"><%= link_to '優先度B', filter_blog_path('B') %></p></div>
-    <p><div class = "select_button"><%= link_to '優先度C', filter_blog_path('C') %></p></div>
+  <p><div class = "select_button"><%= link_to 'ALL', filter_blog_path('nonfin') %></p></div>
+  <p><div class = "select_button"><%= link_to '優先度A', filter_blog_path('nonfin_A') %></p></div>
+  <p><div class = "select_button"><%= link_to '優先度B', filter_blog_path('nonfin_B') %></p></div>
+  <p><div class = "select_button"><%= link_to '優先度C', filter_blog_path('nonfin_C') %></p></div>
   </div>
   <div>
-    <p><%= link_to '未完了一覧へ', filter_blog_path('nonfin') %></p>
+  <p><%= link_to '完了一覧へ', blogs_path %></p>
   </div>
 </div>
 
