@@ -33,18 +33,80 @@ ul{
 .container{
     margin-top:20px;
     padding-bottom: 100px;
+    text-align:center;
+    color:white;
 }
 
 .border{
-     padding: 0.5em 1em;
+    padding: 0.5em 1em;
     margin: 2em 0;
-    font-weight: bold;
-    color: #6091d3;/*文字色*/
-    background: #FFF;
-    border: solid 3px #6091d3;/*線*/
-    border-radius: 10px;/*角の丸み*/
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    a {
+        color:black;
+        
+    }
+}
+.border p {
+    margin: 0; 
+    padding: 0;
+}
+
+.select_button p a{
+    color:blackboard;
 }
 
 .blog_new{
     text-align:center;
+}
+
+.blog_title{
+    color:white;
+}
+
+
+.page_navi{
+    color:white;
+    text-align:center;
+}
+
+// .select_priority{
+//     float:left;
+// }
+// .select_a .select_all{
+//     float:left;
+// }
+
+.select_priority {
+    display: flex;
+    a{color:white;}
+}
+
+
+.task_select{
+    color:white;
+}
+#edit_back a{
+    color:white;
+}
+.blog_form_control{
+    display: block;
+    /* width: 100%; */
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    margin: 0 auto;
 }

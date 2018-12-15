@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
     #ビューにテーブルから取得した全てのブログデータを渡す（インスタンス変数を定義）
     # @blogs = Blog.all kaminari使用前
     @blogs = Blog.all.page(params[:page]).per(3)
-    
+    @index_title = "投稿"
   end
   
   def filter
@@ -14,12 +14,31 @@ class BlogsController < ApplicationController
     @high_blog = Blog.where(priority: 0).page(params[:page]).per(3)
     if params[:id] == "A"
       @blogs = @high_blog
+      @index_title = "優先度Aの投稿"
     elsif params[:id] == "B"
       @middle_blog= Blog.where(priority: 1).page(params[:page]).per(3)
       @blogs = @middle_blog
+      @index_title = "優先度Bの投稿"
     elsif params[:id] == "C"
       @low_blog = Blog.where(priority: 2).page(params[:page]).per(3)
       @blogs = @low_blog
+      @index_title = "優先度Cの投稿"
+    elsif params[:id] == "nonfin"
+      @nonfin_blog = Blog.where(task_flag: false).page(params[:page]).per(3)
+      @blogs = @nonfin_blog
+      @index_title = "未完了の投稿"
+    elsif params[:id] == "nonfin_A"
+      @nonfin_a_blog = Blog.where(priority: 0).where(task_flag: false).page(params[:page]).per(3)
+      @blogs = @nonfin_a_blog
+      @index_title = "優先度Aで未完了の投稿"
+    elsif params[:id] == "nonfin_B"
+      @nonfin_b_blog = Blog.where(priority: 1).where(task_flag: false).page(params[:page]).per(3)
+      @blogs = @nonfin_b_blog
+      @index_title = "優先度Bで未完了の投稿"
+    elsif params[:id] == "nonfin_C"
+      @nonfin_c_blog = Blog.where(priority: 2).where(task_flag: false).page(params[:page]).per(3)
+      @blogs = @nonfin_c_blog
+      @index_title = "優先度Cで未完了の投稿"
     end
     render 'index'
   end

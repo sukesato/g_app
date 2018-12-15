@@ -51,28 +51,33 @@ body {
 .about{
   color: white;
   text-align:center;
-  
+  line-height:1.5;
 }
 
-a:visited{
-  color:white;
-}
+// a:visited{
+//   color:black;
+// }
 
 .theme{
-  vertical-align:middle;
+  font-size:48px;
   text-indent: 2em;
+  line-height:1.5;
 }
 
 .subtheme{
-  vertical-align:middle;
+  font-size:36px;
 }
 
 .logo{
   margin-top: 15%;
 }
 
-.function{
-  vertical-align:middle;
-  width:300px;
+.new_user_enter a{
+  font-size:16px;
+  color: white;
+}
+
+.alert-m{
+  color: white;
   text-align:center;
 }

@@ -1,32 +1,32 @@
 
-<h1>ブログ一覧</h1>
+<h1><section class = "page_navi"><%= @index_title%>一覧</h1></section>
 
 <p><%= notice %></p>
 
-<p><%= link_to 'ALL', blogs_path %></p>
-<p><%= link_to 'A', filter_blog_path('A') %></p>
-<p><%= link_to 'B', filter_blog_path('B') %></p>
-<p><%= link_to 'C', filter_blog_path('C') %></p>
+<div class = "select_priority">
+  <p><div class = "select_button"><%= link_to 'ALL', blogs_path %></p></div>
+  <p><div class = "select_button"><%= link_to '優先度A', filter_blog_path('A') %></p></div>
+  <p><div class = "select_button"><%= link_to '優先度B', filter_blog_path('B') %></p></div>
+  <p><div class = "select_button"><%= link_to '優先度C', filter_blog_path('C') %></p></div>
+  </div>
+</div>
 
-    <p>タイトル</p>
-    <p>内容</p>
-    <p>優先度</p>
 
 <% @blogs.each do |blog| %>
   <div class = "border">
-    <p><%= blog.title %></p>
-    <p><%= blog.content %></p>
-    <p><%= blog.getStatusKeyFromValue %></p>
+    <p>タイトル<%= blog.title %></p>
+    <p>内容<%= blog.content %></p>
+    <p>優先度<%= blog.getStatusKeyFromValue %></p>
     <p><%= blog.comments.count %></p>
     
     
-    
+    <div class = "select_button">
     <p><%= link_to '詳細を確認する', blog_path(blog.id) %></p>
     
     <p><%= link_to "ブログを編集する", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %></p>
     
     <p><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></p>
-    
+    </div> 
   </div>
 <% end %>
 
