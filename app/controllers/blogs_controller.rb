@@ -5,7 +5,7 @@ class BlogsController < ApplicationController
   def index
     #ビューにテーブルから取得した全てのブログデータを渡す（インスタンス変数を定義）
     # @blogs = Blog.all kaminari使用前
-    @blogs = Blog.all.page(params[:page]).per(3)
+    @blogs = Blog.where(user_id:current_user.id).page(params[:page]).per(3)
     @index_title = "投稿"
   end
   
