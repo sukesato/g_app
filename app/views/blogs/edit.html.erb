@@ -13,13 +13,14 @@
     </div>
   <% end %>
 
+  <section class = "blog_send">
   <div class="blog_title">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <div class = "b_field"><%= form.text_field :title %></div>
   </div>
   <div class="blog_title">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <div class = "b_field"><%= form.text_field :content %></div>
   </div>
   <div class="blog_title">
     <%= form.label :priority %>
@@ -29,7 +30,9 @@
       <label><%= form.radio_button :task_flag, true %>完了</label>
       <label><%= form.radio_button :task_flag, false %>未完了</label>
   </div>
-  <%= form.submit %>
+  <%= form.submit %><br>
 <% end %>
 
 <%= link_to "投稿一覧画面にもどる", blogs_path %>
+
+</section>
