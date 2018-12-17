@@ -11,7 +11,6 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap.css
- *= require scaffolds.scss
  *= require_tree .
  *= require_self
  */
@@ -59,3 +58,4 @@
  .dem{
   margin:0 auto;
 }
+

@@ -7,9 +7,9 @@
     <section class="about">
       <p><seciton class = "theme">Complex<br></p>
       <p><seciton class = "subtheme">-Change the power-</p>
-      <% if current_user %><%#ログインしていないときはこちら%>
+      <% if current_user %><%#ログインしているときはこちら%>
         <p><section class = "new_user_enter"><%= link_to "早速、投稿を行う", new_blog_path %></p>
-      <% else %><%#ログインしている時はこちら%>
+      <% else %><%#ログインしていない時はこちら%>
         <p><section class = "new_user_enter"><%= link_to "自分と向き合う方はこちら", new_user_session_path %></p>
       <% end %>
     </section>

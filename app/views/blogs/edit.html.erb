@@ -24,7 +24,7 @@
   </div>
   <div class="blog_title">
     <%= form.label :priority %>
-    <%= form.select :priority, Blog.statuses.map { |key, value| [key, value]}, {} , class: 'form-control'%>
+    <%= form.select :priority, Blog.statuses.map { |key, value| [key, value]}, {} , class: 'blog_form-control b_field'%>
   </div>
   <div class="blog_title">
       <label><%= form.radio_button :task_flag, true %>完了</label>
