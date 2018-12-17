@@ -19,8 +19,8 @@
     <p>タイトル<%= blog.title %></p>
     <p>内容<%= blog.content %></p>
     <p>優先度<%= blog.getStatusKeyFromValue %></p>
-    <p><%= blog.comments.count %></p>
-    
+    <p>コメント数<%= blog.comments.count %></p>
+    <p>作成日時<%= blog.created_at %></p>
     
     <div class = "select_button">
     <p><%= link_to '詳細を確認する', blog_path(blog.id) %></p>

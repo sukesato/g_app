@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181207070824) do
+ActiveRecord::Schema.define(version: 20181217094344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,16 @@ ActiveRecord::Schema.define(version: 20181207070824) do
     t.integer "user_id"
     t.integer "priority", limit: 2, default: 1, null: false
     t.boolean "task_flag", default: false, null: false
+    t.datetime "created_at", default: -> { "now()" }
+    t.datetime "updated_at", default: -> { "now()" }
   end
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.bigint "blog_id"
     t.bigint "user_id"
+    t.datetime "created_at", default: -> { "now()" }
+    t.datetime "updated_at", default: -> { "now()" }
     t.index ["blog_id"], name: "index_comments_on_blog_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
