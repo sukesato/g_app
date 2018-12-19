@@ -1,0 +1,21 @@
+<!-- この記述がblogのshow画面に表示されるコメント入力欄になります -->
+<%= form_with(model:[@blog, @comment], local: true) do |form| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :コンテンツ %>
+    <div class = "b_field"><%= form.text_area :content %></div>
+  </div>
+
+  <div class="actions">
+    <div class = "b_field"><%= form.submit %></div>
+  </div>
+<% end %>

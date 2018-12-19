@@ -7,11 +7,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :blogs do
     resources :comments
-  
+    
     collection do
         post :confirm
     end
-    
     member do
       get :filter
     end
