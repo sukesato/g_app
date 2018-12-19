@@ -2,10 +2,13 @@
   <% comments.each do |comment| %>
     <% if comment.id.present? %>
       <li>
+        <div class="each_other_comment row" data-comment="<%= comment.id %>">
         <p><%= comment.content %></p>
-        <p><%= link_to "編集", edit_blog_comment_path(blog.id,comment.id), data: { confirm: '本当に編集していいですか？' } %></p>
+        <p><%= link_to "編集", edit_blog_comment_path(blog.id,comment.id), remote: true, data: { confirm: '本当に編集していいですか？' } %></p>
         <p><%= link_to "削除", blog_comment_path(blog.id,comment.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %></p>
+        </div>
       </li>
     <% end %>
   <% end %>
 </ul>
+

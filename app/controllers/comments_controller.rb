@@ -25,9 +25,13 @@ class CommentsController < ApplicationController
   end
   
   def edit
+    @comment = Comment.find(params[:id])
   end
 
-
+  def update
+    @comment = Comment.find(params[:id])
+    render :index if @comment.update(comment_params)
+  end
   
   # ストロングパラメーター
   def comment_params
