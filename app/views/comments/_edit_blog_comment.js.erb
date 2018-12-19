@@ -1,0 +1,8 @@
+<div class="each_other_comment row" data-comment="<%= @id_comment %>">
+  <%= form_with(model: @comment, remote: true) do |form| %>
+    <div class="add_other_comment row">
+      <%= form.text_area :content, rows: 3, placeholder: "コメントを追加...", class: "col-xs-11" %>
+      <%= form.submit '投稿する', data: { confirm: '投稿しますか？' }, class: 'btn btn-default' %>
+    </div>
+  <% end %>
+</div>

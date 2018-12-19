@@ -25,9 +25,13 @@ class CommentsController < ApplicationController
   end
   
   def edit
+    @id_comment = Comment.find(params[:id]).id
   end
 
-
+  def update
+    @comment = Comment.find_by(id: params[:id])
+    @comment.save
+  end
   
   # ストロングパラメーター
   def comment_params
