@@ -34,6 +34,14 @@
     <%= f.label :current_password %><br />
     <div class = "b_field"><%= f.password_field :current_password, autocomplete: "current-password" %></div>
   </div>
+  
+  <div class="field">
+    <%= f.label :profile_image ,'プロフィール画像'%>
+    <div class="field_image">
+      <%= f.file_field :profile_image%>
+      <%= f.hidden_field :profile_image_cache %>
+    </div>
+  </div>
 
   <div class="actions">
     <%= f.submit "更新" %>

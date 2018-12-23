@@ -39,13 +39,13 @@ ul{
 
 .border{
     padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #5d627b;
+    margin: 2em 5em;
+    color: black;
     background: white;
-    border-top: solid 5px #5d627b;
+    border: solid 5px #5d627b;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
     a {
-        color:black;
+        color:#286090;
         
     }
 }
@@ -65,7 +65,6 @@ ul{
 
 .select_button {
     display: table-cell;
-    text-align: center;
     vertical-align: middle;
 }
 
@@ -185,4 +184,12 @@ label {
 
 label {
   display: block;
+}
+
+.page_button{
+    text-align:center
+}
+
+.page_count{
+    color:white;
 }

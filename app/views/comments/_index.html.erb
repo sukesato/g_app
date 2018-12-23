@@ -4,8 +4,9 @@
       <li>
         <div class="each_other_comment row" data-comment="<%= comment.id %>">
         <p><%= comment.content %></p>
-        <p><%= link_to "編集", edit_blog_comment_path(blog.id,comment.id) %></p>
-        <p><%= link_to "削除", blog_comment_path(blog.id,comment.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %></p>
+        <div class = "edit_delete">
+        <p><%= link_to "編集", edit_blog_comment_path(blog.id,comment.id) %>
+        <%= link_to "削除", blog_comment_path(blog.id,comment.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %></p>
         </div>
       </li>
     <% end %>

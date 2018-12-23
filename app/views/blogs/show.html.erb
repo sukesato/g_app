@@ -11,9 +11,9 @@
   
   <div class = "task_select"></div>
     <% if @blog.task_flag == true %>
-      <p><%= "完了" %><%=image_tag '500.png',:size =>'50x50' %></p>
+      <p><%=image_tag 'comp.jpg',:size =>'50x50' %></p>
     <% else @blog.task_flag == false %>
-      <p ><%= "未完了" %><%=image_tag '404.png',:size =>'50x50' %></p>
+      <p ><%=image_tag 'incomp.jpg',:size =>'50x50' %></p>
     <% end %>
   
     <%=form_with(model: @blog) do |form| %>

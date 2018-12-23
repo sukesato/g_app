@@ -1,7 +1,7 @@
 <%= form_with(model: @comment, url: blog_comment_path) do |form| %>
 
   <div class="field">
-    <%= form.label :コンテンツ %>
+    <%= form.label :コメント %>
     <div class = "b_field"><%= form.text_area :content %></div>
   </div>
 

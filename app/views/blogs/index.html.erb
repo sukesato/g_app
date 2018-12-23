@@ -9,34 +9,34 @@
     <p><div class = "select_button"><%= link_to '優先度C', filter_blog_path('C') %></p></div>
   </div>
   <div>
-    <p><%= link_to '未完了一覧へ', filter_blog_path('nonfin') %></p>
+    <p><%= link_to '未完了投稿一覧へ', filter_blog_path('nonfin') %></p>
   </div>
 </div>
 
 
 <% @blogs.each do |blog| %>
   <div class = "border">
-    <p>タイトル<%= blog.title %></p>
-    <p>内容<%= blog.content %></p>
-    <p>優先度<%= blog.getStatusKeyFromValue %></p>
-    <p>コメント数<%= blog.comments.count %></p>
-    <p>作成日時<%= blog.created_at %></p>
+    <p>タイトル:<%= blog.title %></p>
+    <p>内容:<%= blog.content %></p>
+    <p>優先度:<%= blog.getStatusKeyFromValue %></p>
+    <p>コメント数:<%= blog.comments.count %></p>
+    <p>作成日時:<%= blog.created_at %></p>
     
     <div class = "select_button">
-    <p><%= link_to '詳細を確認する', blog_path(blog.id) %></p>
+    <p><%= link_to '詳細を確認する', blog_path(blog.id), class: "btn btn-link" %>
     
-    <p><%= link_to "ブログを編集する", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %></p>
+    <%= link_to 'ブログを編集する', edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' }, class: "btn btn-link" %>
     
-    <p><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></p>
+    <%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } , class: "btn btn-link"%></p>
     </div> 
   </div>
 <% end %>
-
+<section class = "page_button">
+  <div class = "page_count">
 <%= paginate @blogs %>
-
+  </div>
 <%= link_to '新規投稿を行う', new_blog_path, class: "btn btn-primary" %>
-
-<p><%=current_user.id%></p>
+</section>
 
 
 
