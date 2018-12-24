@@ -54,6 +54,9 @@ body {
   line-height:1.5;
 }
 
+.about h1{
+  margin-top:2em;
+}
 // a:visited{
 //   color:black;
 // }
@@ -84,4 +87,22 @@ body {
 
 .a_link{
   color:white;
+}
+
+.function {
+  background-color: none;
+  padding: 80px;
+  padding-bottom: 185px;
+}
+
+.function-images {
+  width: 100%;
+  display: table;
+  margin-top: 60px;
+  table-layout: fixed;
+}
+
+.function-image {
+  display: table-cell;
+  width: 100%;
 }

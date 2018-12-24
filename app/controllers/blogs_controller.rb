@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:index, :new, :create]
+  before_action :ensure_correct_user, only: [:show, :edit, :update, :destroy]
   
   def index
     #ビューにテーブルから取得した全てのブログデータを渡す（インスタンス変数を定義）
@@ -102,11 +103,19 @@ class BlogsController < ApplicationController
   private
   
   def blog_params
-    params.require(:blog).permit(:title, :content, :priority, :task_flag) #StrongParameterを使用
+    params.require(:blog).permit(:title, :content, :priority, :task_flag, :user_id) #StrongParameterを使用
   end
   
   def set_blog
     @blog = Blog.find(params[:id])
+  end
+  
+  def ensure_correct_user
+    @blog = Blog.find_by(id:params[:id])
+    if @blog.user_id != current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to blogs_path
+    end
   end
   
 end
