@@ -33,8 +33,9 @@
 <% end %>
 <section class = "page_button">
   <%= paginate @blogs %>
-  
+<div class = "new_button">
 <%= link_to '新規投稿を行う', new_blog_path, class: "btn btn-primary" %>
+</div>  
 </section>
 
 
