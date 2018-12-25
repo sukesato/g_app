@@ -22,8 +22,8 @@
       <%= blog.getStatusKeyFromValue %></p>
     </div>
     <div class = "tc_menu">
-      <p class = "b_title">タイトル:<%= blog.title %></p>
-      <p>内容:<%= blog.content %></p>
+      <p class = "b_title"><%= blog.title %></p>
+      <p><%= blog.content %></p>
     </div>
     <div class = "c_menu">
       <p><%= fa_icon 'comment 2x' %><%= blog.comments.count %></p>

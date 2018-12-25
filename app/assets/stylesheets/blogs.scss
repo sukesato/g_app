@@ -33,8 +33,8 @@ ul{
 .container{
     margin-top:20px;
     padding-bottom: 100px;
-    text-align:center;
-    color:white;
+    // text-align:center;
+    // color:white;
 }
 
 .border{
@@ -102,9 +102,9 @@ ul{
 }
 
 
-.task_select{
-    color:white;
-}
+// .task_select{
+//     color:white;
+// }
 #edit_back a{
     color:block;
 }
@@ -227,3 +227,35 @@ label {
   font-weight:bold;
 }
 
+.bt_bc_menu{
+  float:left;
+  border: hidden;
+  margin:3px;
+}
+
+.sp_menu{
+  float:left;
+  border: hidden;
+  margin:3px 10px;
+}
+
+.sp_font{
+  text-align:center;
+}
+
+.task_image{
+  float:left;
+  border: hidden;
+  margin:3px 5px;
+}
+
+.f_radio{
+  float:left;
+  border: hidden;
+  margin:3px 5px;
+}
+
+.s_content{
+  clear: both;
+  margin-left:3px;
+}
