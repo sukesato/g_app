@@ -106,7 +106,7 @@ ul{
     color:white;
 }
 #edit_back a{
-    color:white;
+    color:block;
 }
 .blog_form_control{
     display: block;
@@ -193,3 +193,37 @@ label {
 .new_button{
     margin-bottom:11%;
 }
+
+.p_menu{
+    float:left;
+    border: hidden;
+    margin:3px;
+}
+
+.tc_menu{
+    float:left;
+    border: hidden;
+    margin:3px;
+    line-height:1.5em;
+}
+
+.b_title{
+  font-weight:bold;
+  font-size:16px;
+}
+
+.c_menu{
+  float:left;
+  border: hidden;
+  margin:3px;
+}
+
+.d_menu{
+  clear: both;
+}
+.p_rank{
+  text-align:center;
+  font-size:16px;
+  font-weight:bold;
+}
+

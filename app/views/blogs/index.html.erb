@@ -16,18 +16,28 @@
 
 <% @blogs.each do |blog| %>
   <div class = "border">
-    <p>タイトル:<%= blog.title %></p>
-    <p>内容:<%= blog.content %></p>
-    <p>優先度:<%= blog.getStatusKeyFromValue %></p>
-    <p>コメント数:<%= blog.comments.count %></p>
-    <p>作成日時:<%= blog.created_at %></p>
+    <div class = "p_menu">
+      <p>優先度</p>
+      <p class = "p_rank">
+      <%= blog.getStatusKeyFromValue %></p>
+    </div>
+    <div class = "tc_menu">
+      <p class = "b_title">タイトル:<%= blog.title %></p>
+      <p>内容:<%= blog.content %></p>
+    </div>
+    <div class = "c_menu">
+      <p><%= fa_icon 'comment 2x' %><%= blog.comments.count %></p>
+    </div>
+    <div class = "d_menu">
+      <p>作成日時:<%= blog.created_at %></p>
+    </div>
     
     <div class = "select_button">
-    <p><%= link_to '詳細を確認する', blog_path(blog.id), class: "btn btn-link" %>
-    
-    <%= link_to 'ブログを編集する', edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' }, class: "btn btn-link" %>
-    
-    <%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } , class: "btn btn-link"%></p>
+      <p><%= link_to '詳細を確認する', blog_path(blog.id), class: "btn btn-link" %>
+      
+      <%= link_to 'ブログを編集する', edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' }, class: "btn btn-link" %>
+      
+      <%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } , class: "btn btn-link"%></p>
     </div> 
   </div>
 <% end %>
