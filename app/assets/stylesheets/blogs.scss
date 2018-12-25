@@ -154,6 +154,7 @@ ul{
 
 label {
   display: block;
+  color:white;
 }
 
 #error_explanation {
@@ -184,7 +185,7 @@ label {
 
 label {
   display: block;
-  color:black;
+  color:white;
 }
 
 .page_button{
@@ -267,4 +268,8 @@ label {
 
 .edit_back a{
   color:white;
+}
+
+.radio_label{
+  color:black;
 }

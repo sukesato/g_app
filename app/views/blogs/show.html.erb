@@ -23,8 +23,8 @@
   
   <div class = "f_radio">
     <%=form_with(model: @blog) do |form| %>
-      <label><%= form.radio_button :task_flag, true %>完了</label>
-      <label><%= form.radio_button :task_flag, false %>未完了</label>
+      <label class = "radio_label"><%= form.radio_button :task_flag, true %>完了</label>
+      <label class = "radio_label"><%= form.radio_button :task_flag, false %>未完了</label>
   </div>
   
       <div class = "b_field"><%= form.submit %></div>
