@@ -184,6 +184,7 @@ label {
 
 label {
   display: block;
+  color:black;
 }
 
 .page_button{
@@ -230,13 +231,13 @@ label {
 .bt_bc_menu{
   float:left;
   border: hidden;
-  margin:3px;
+  margin:0 auto;
 }
 
 .sp_menu{
   float:left;
   border: hidden;
-  margin:3px 10px;
+  margin:0%11%;
 }
 
 .sp_font{
@@ -246,16 +247,24 @@ label {
 .task_image{
   float:left;
   border: hidden;
-  margin:3px 5px;
+  margin:0%&12%;
 }
 
 .f_radio{
   float:left;
   border: hidden;
-  margin:3px 5px;
+  margin:0%12%;
 }
 
 .s_content{
   clear: both;
-  margin-left:3px;
+  margin-left:0 auto;
+}
+
+.edit_back{
+  text-align:center;
+}
+
+.edit_back a{
+  color:white;
 }

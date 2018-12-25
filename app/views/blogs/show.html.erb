@@ -35,19 +35,21 @@
   </div>
 
   <div class = "border">
-  <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
-  <div id="comments_area">
-    <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
-    <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
-  </div>
+    <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+    <div id="comments_area">
+      <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
+    </div>
   </div>
 
-  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-  <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
-  
-  
-  <div id = "edit_back">
-    <%= link_to '編集', edit_blog_path(@blog) %>
-    <%= link_to '戻る', blogs_path %>
+  <div class = "border">
+    <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+    <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
   </div>
+  
+    <div class = "edit_back">
+      <%= link_to '編集', edit_blog_path(@blog) %>
+      <%= link_to '戻る', blogs_path %>
+    </div>
+    
 </div>

@@ -2,12 +2,13 @@
   <% comments.each do |comment| %>
     <% if comment.id.present? %>
       <li>
-        <div class="each_other_comment row" data-comment="<%= comment.id %>">
-          <p><%= comment.content %></p>
+        <div data-comment="<%= comment.id %>">
           <div class = "edit_delete">
-            <p><%= link_to "編集", edit_blog_comment_path(blog.id,comment.id) %>
+            <p class = "cc_time">作成日時:<%= comment.created_at %></p>
+            <p class = "c_ed_menu"><%= link_to "編集", edit_blog_comment_path(blog.id,comment.id) %>
             <%= link_to "削除", blog_comment_path(blog.id,comment.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %></p>
           </div>
+          <p>コメント：<%= comment.content %></p>
         </div>
       </li>
     <% end %>
