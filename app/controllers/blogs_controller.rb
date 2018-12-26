@@ -49,7 +49,6 @@ class BlogsController < ApplicationController
       render template: "blogs/nf_index"
     end
   end
-  
 
   def new
     if params[:back]
@@ -60,8 +59,8 @@ class BlogsController < ApplicationController
   end
   
   def create
-    @blog = Blog.new(blog_params)
-    @blog.user_id = current_user.id #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
+    @blog = current_user.blogs.build(blog_params)
+    #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
     if @blog.save
       # 一覧画面へ遷移して"新規投稿を行いました！"とメッセージを表示します。
       redirect_to blogs_path, notice: "新規投稿を行いました！"
